@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +38,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
     // Implicit Intent (Open URL External Browser)
+        // Implicit Intent (Open URL External Browser)
         btnBrowser.setOnClickListener {
+            val query = "https://akprind.ac.id"
+            val intent = Intent(Intent.ACTION_VIEW, query.toUri())
+            startActivity(intent)
         }
     }
 }
